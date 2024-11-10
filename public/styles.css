@@ -1,0 +1,42 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  header {
+    background-color: #0044cc;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  #home {
+    padding: 2em;
+    text-align: center;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #0044cc;
+    color: white;
+  }
+  
