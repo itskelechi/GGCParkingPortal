@@ -1,75 +1,42 @@
-require('dotenv').config();
 const express = require('express');
+const { engine } = require('express-handlebars');
 const axios = require('axios');
-const { readFile } = require('fs');
+require('dotenv').config();
+
 const app = express();
+
+// Set up Handlebars view engine
+app.engine('hbs', engine({
+  extname: '.hbs',
+  helpers: {
+    eq: (a, b) => a === b // Define the `eq` helper
+  }
+})); 
+app.set('view engine', 'hbs');
+app.set('views', './views');
+
 app.use(express.json());
+app.use(express.static('public'));
 
+// Main page route
 app.get('/', async (req, res) => {
-   
-        res.send( await readFile('./ggc-parking/index.html', 'utf-8'));
-
+    res.render('index', { content: 'home' });
 });
 
+// Tickets page route
 app.get('/tickets', async (req, res) => {
-   
-    res.send( await readFile('./ggc-parking/tickets.html', 'utf-8'));
-
+    res.render('index', { content: 'tickets' });
 });
 
+// Permits page route
 app.get('/permits', async (req, res) => {
-   
-    res.send( await readFile('./ggc-parking/passes.html', 'utf-8'));
-
+    res.render('index', { content: 'passes' });
 });
 
+// Merchandise page route
 app.get('/merch', async (req, res) => {
-   
-    res.send( await readFile('./ggc-parking/merchandise.html', 'utf-8'));
-
+    res.render('index', { content: 'merchandise' });
 });
 
-
-// Mock Payment for FAFSA
-app.post('/api/fafsa', (req, res) => {
-  // Simulate FAFSA approval
-  const isApproved = Math.random() > 0.2; // 80% approval rate
-  res.json({ approved: isApproved });
-});
-
-// PayPal Payment Endpoint
-app.post('/api/paypal/pay', async (req, res) => {
-  try {
-    const { amount } = req.body;
-    const response = await axios.post('https://api.sandbox.paypal.com/v1/payments/payment', {
-      intent: 'sale',
-      payer: { payment_method: 'paypal' },
-      transactions: [{ amount: { total: amount, currency: 'USD' } }],
-      redirect_urls: {
-        return_url: 'http://localhost:3700/payment-success',
-        cancel_url: 'http://localhost:3700/payment-cancel',
-      },
-    }, {
-      auth: {
-        username: process.env.PAYPAL_CLIENT_ID,
-        password: process.env.PAYPAL_SECRET,
-      },
-    });
-    res.json(response.data);
-  } catch (error) {
-    res.status(500).send('Error with PayPal transaction');
-  }
-});
-
-// Klarna Payment Endpoint
-app.post('/api/klarna/pay', async (req, res) => {
-  try {
-    const { amount } = req.body;
-    // Add Klarna-specific setup for payment request
-    res.json({ status: 'success', message: 'Klarna payment simulated' });
-  } catch (error) {
-    res.status(500).send('Error with Klarna transaction');
-  }
-});
-
+// Start the server
 app.listen(3700, () => console.log('Server running on http://localhost:3700'));
