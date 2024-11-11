@@ -1,3 +1,72 @@
-<h1>School Merchandise</h1>
-<p>Shop for GGC-branded car accessories and merchandise.</p>
-<button class="btn btn-primary">Add Merchandise to Cart</button>
+{{! merchandise.hbs }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGC Parking Portal - Merchandise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Merchandise</h1>
+        <div class="row">
+
+            <!-- Car Finder Fob -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="/images/car-finder-fob.png" class="card-img-top" alt="Car Finder Fob">
+                    <div class="card-body">
+                        <h5 class="card-title">Car Finder Fob</h5>
+                        <p class="card-text">Uses the latest GPS technology to navigate you to the exact spot your car is parked.</p>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EV Charging Membership -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="/images/EV-charging-membership.png" class="card-img-top" alt="EV Charging Membership">
+                    <div class="card-body">
+                        <h5 class="card-title">EV Charging Membership</h5>
+                        <p class="card-text">Allows you unlimited monthly access to an EV charging station anywhere on campus.</p>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spirit License Plates -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="/images/Liscence-plate.png" class="card-img-top" alt="Spirit License Plates">
+                    <div class="card-body">
+                        <h5 class="card-title">Spirit License Plates</h5>
+                        <p class="card-text">Show your school spirit while also keeping safe when returning from night classes.</p>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Parking Decal -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="/images/Special-parking-decal.png" class="card-img-top" alt="Special Parking Decal">
+                    <div class="card-body">
+                        <h5 class="card-title">Special Parking Decal</h5>
+                        <p class="card-text">Access to all lots and parking spots on campus for each semester.</p>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Add JavaScript if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
