@@ -1,42 +1,26 @@
-const express = require('express');
-const { engine } = require('express-handlebars');
-const axios = require('axios');
 require('dotenv').config();
-
+const express = require('express');
+const { engine } = require('express-handlebars'); // Updated import
 const app = express();
+const PORT = 3700;
 
-// Set up Handlebars view engine
-app.engine('hbs', engine({
-  extname: '.hbs',
-  helpers: {
-    eq: (a, b) => a === b // Define the `eq` helper
-  }
-})); 
+// Set up Handlebars as the view engine
+app.engine('hbs', engine({ defaultLayout: 'main', extname: '.hbs' })); // Updated syntax
 app.set('view engine', 'hbs');
-app.set('views', './views');
 
-app.use(express.json());
 app.use(express.static('public'));
+app.use(express.json());
 
-// Main page route
-app.get('/', async (req, res) => {
-    res.render('index', { content: 'home' });
-});
+// Routes
+app.get('/', (req, res) => res.render('content/index', { title: 'Home' }));
+app.get('/permits', (req, res) => res.render('content/permits', { title: 'Parking Permits' }));
+app.get('/tickets', (req, res) => res.render('content/tickets', { title: 'Pay Tickets' }));
+app.get('/merchandise', (req, res) => res.render('content/merchandise', { title: 'Merchandise' }));
+app.get('/checkout', (req, res) => res.render('content/checkout', { title: 'Checkout' }));
 
-// Tickets page route
-app.get('/tickets', async (req, res) => {
-    res.render('index', { content: 'tickets' });
-});
+// Payment simulation routes (placeholders)
+app.post('/tickets/pay', (req, res) => res.send('Ticket payment processed'));
+app.post('/checkout/process', (req, res) => res.send('Checkout processed'));
 
-// Permits page route
-app.get('/permits', async (req, res) => {
-    res.render('index', { content: 'passes' });
-});
-
-// Merchandise page route
-app.get('/merch', async (req, res) => {
-    res.render('index', { content: 'merchandise' });
-});
-
-// Start the server
-app.listen(3700, () => console.log('Server running on http://localhost:3700'));
+// Start server
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
