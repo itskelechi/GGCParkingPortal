@@ -1,3 +1,65 @@
-<h1>Welcome to the GGC Parking Portal</h1>
+<h1>GGC Parking Portal</h1>
 <p>Manage your parking permits, pay tickets, and browse school-branded merchandise.</p>
 <img src="public/images/ggc-logo-light.png" alt="Campus Image" class="hero-image">
+
+{{!-- Main layout for the home page --}}
+<div class="container-fluid">
+  <div class="row">
+    <!-- Left Sidebar (User Info and Map) -->
+    <div class="col-md-3 sidebar">
+      <div class="user-info">
+        <h3>USER NAME</h3>
+        <p>User ID</p>
+      </div>
+      
+      <div class="map-section">
+        <img src="/images/campus-map.jpg" alt="Campus Map" class="img-fluid" />
+        <p><a href="#">Instruction Video</a></p>
+        <p><a href="#">Frequently Asked Questions</a></p>
+      </div>
+      
+      <div class="contact-info">
+        <h5>Contact Us</h5>
+        <p>Construction Services</p>
+        <p>Email: example@ggc.edu</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+    </div>
+    
+    <!-- Main Content (Search and User Info Card) -->
+    <div class="col-md-9">
+      <!-- Top Navbar Links -->
+      <div class="top-nav">
+        <a href="#">Permits</a>
+        <a href="#">Tickets</a>
+        <a href="#">Account History</a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar mt-4">
+        <input type="text" class="form-control" placeholder="Search by license plate" />
+        <button class="btn btn-primary">Search</button>
+      </div>
+
+      <!-- Parking Info Card -->
+      <div class="parking-info-card mt-4">
+        <img src="/images/parking-icon.png" alt="Parking Icon" class="parking-icon">
+        <div class="user-details">
+          <p>Name: John Doe</p>
+          <p>License Plate: XYZ-1234</p>
+          <p>Car Details: 2018 - Black Honda</p>
+          <p>Permit Type: Gold</p>
+          <p>Outstanding Ticket: $0</p>
+          <button class="btn btn-dark mt-2">Edit</button>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons mt-4 d-flex justify-content-around">
+        <button class="btn btn-dark">Parking Portal</button>
+        <button class="btn btn-dark">Appeal Ticket</button>
+        <button class="btn btn-dark">Ticket Status</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -40,3 +40,67 @@
     color: white;
   }
   
+  .container-fluid {
+    padding: 0;
+  }
+  
+  .sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .user-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .map-section img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .top-nav a {
+    margin-right: 20px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .parking-info-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .parking-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+  
+  .user-details {
+    font-size: 0.9rem;
+  }
+  
+  .nav-buttons .btn {
+    width: 30%;
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  
+  .contact-info h5 {
+    font-weight: bold;
+  }
+  
